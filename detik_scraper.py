@@ -20,8 +20,8 @@ writer.writerow(headers)
 # saving data to mysql part 1
 cnx = mysql.connector.connect(user='root', password='', host='127.0.0.1', database='detik')
 cursor = cnx.cursor()
-
 output_list = []
+
 for item in content:
     title = item.find('span').find('img')['title']
     category = item.find('div', 'media__date').text
@@ -65,10 +65,12 @@ for item in content:
 
 file.close()
 
-# cont total data scraping part 2
-print(f'\nTotal data yang di-generate : {total_data}')
 
 # dataframe view from file csv with pandas
 # pd.set_option('display.max_columns', None)  # hanya untuk menampilkan semua kolom (opsional)
 df = pd.read_csv('csvresult.csv')
 print(df)
+
+
+# cont total data scraping part 2
+print(f'\nTotal data yang di-generate : {total_data}')

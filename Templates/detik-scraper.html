@@ -61,13 +61,13 @@
 
                             <!-- Product image-->
                             {{ image|safe }}
-                            <a href="{{ image.find('a')['href']|safe }}">
+                            <a href="{{ image.find('a')['href']|safe }}" target="_blank">
                                 <img class="card-img-top" src="{{ image.find('a').find('img')['title']|safe }}" alt="" />
                             </a>
 
                             <!-- Product details-->
                             <h5 class="fw-bolder">
-                                <a href="{{ image.find('a')['href']|safe }}">
+                                <a href="{{ image.find('a')['href']|safe }}" target="_blank">
                                     {{ image.find('a').find('img')['title']|safe }}
                                 </a>
                             </h5>
